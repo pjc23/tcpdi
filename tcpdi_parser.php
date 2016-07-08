@@ -1383,11 +1383,12 @@ class tcpdi_parser {
      * @since 1.0.000 (2011-05-23)
      */
     public function Error($msg) {
-        // exit program and print error
-        die('<strong>TCPDF_PARSER ERROR: </strong>'.$msg);
+        throw new TcpdiParserException($msg);
     }
 
 } // END OF TCPDF_PARSER CLASS
+
+class TcpdiParserException extends Exception {}
 
 //============================================================+
 // END OF FILE
